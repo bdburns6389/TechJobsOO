@@ -21,18 +21,21 @@ namespace TechJobs.ViewModels
         
         [Required]
         [Display(Name = "Location")]
-        public string Location { get; set; } //How is this working?  Ask Johnathon Saturday.
+        public int Location { get; set; } //How is this working?  Ask Johnathon Saturday.
         public List<SelectListItem> Locations { get; set; } = new List<SelectListItem>();
 
         [Required]
         [Display(Name = "Skill")]
-        public string CoreCompetency { get; set; }
+        public int CoreCompetency { get; set; }
         public List<SelectListItem> CoreCompetencies { get; set; } = new List<SelectListItem>();
         
         [Required]
         [Display(Name = "Position Type")]
-        public string PositionType { get; set; }
+        public int PositionType { get; set; }
         public List<SelectListItem> PositionTypes { get; set; } = new List<SelectListItem>();
+        //Is it right for the initiators to have the type, or should they be strings?
+
+        
 
         public NewJobViewModel()
         {
