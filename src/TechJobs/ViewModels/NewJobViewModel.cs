@@ -22,17 +22,17 @@ namespace TechJobs.ViewModels
         
         [Required]
         [Display(Name = "Location")]
-        public int LocationsID { get; set; } 
+        public string Location { get; set; } //How is this working?  Ask Johnathon Saturday.
         public List<SelectListItem> Locations { get; set; } = new List<SelectListItem>();
 
         [Required]
         [Display(Name = "Skill")]
-        public int CoreCompetenciesID { get; set; }
+        public int CoreCompetency { get; set; }
         public List<SelectListItem> CoreCompetencies { get; set; } = new List<SelectListItem>();
         
         [Required]
         [Display(Name = "Position Type")]
-        public int PositionTypesID { get; set; }
+        public int PositionType { get; set; }
         public List<SelectListItem> PositionTypes { get; set; } = new List<SelectListItem>();
 
         public NewJobViewModel()
