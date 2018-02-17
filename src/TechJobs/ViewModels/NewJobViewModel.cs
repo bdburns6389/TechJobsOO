@@ -17,18 +17,22 @@ namespace TechJobs.ViewModels
 
         // TODO #3 - Included other fields needed to create a job,
         // with correct validation attributes and display names.
-
+        
         public List<SelectListItem> Employers { get; set; } = new List<SelectListItem>();
+        
         [Required]
         [Display(Name = "Location")]
+        public int LocationsID { get; set; } 
         public List<SelectListItem> Locations { get; set; } = new List<SelectListItem>();
 
         [Required]
         [Display(Name = "Skill")]
+        public int CoreCompetenciesID { get; set; }
         public List<SelectListItem> CoreCompetencies { get; set; } = new List<SelectListItem>();
         
         [Required]
         [Display(Name = "Position Type")]
+        public int PositionTypesID { get; set; }
         public List<SelectListItem> PositionTypes { get; set; } = new List<SelectListItem>();
 
         public NewJobViewModel()
@@ -43,7 +47,30 @@ namespace TechJobs.ViewModels
                     Text = field.Value
                 });
             }
-
+            foreach (Location field in jobData.Locations.ToList())
+            {
+                Locations.Add(new SelectListItem
+                {
+                    Value = field.ID.ToString(),
+                    Text = field.Value
+                });
+            }
+            foreach (CoreCompetency field in jobData.CoreCompetencies.ToList())
+            {
+                CoreCompetencies.Add(new SelectListItem
+                {
+                    Value = field.ID.ToString(),
+                    Text = field.Value
+                });
+            }
+            foreach (PositionType field in jobData.PositionTypes.ToList())
+            {
+                PositionTypes.Add(new SelectListItem
+                {
+                    Value = field.ID.ToString(),
+                    Text = field.Value
+                });
+            }
             // TODO #4 - populate the other List<SelectListItem> 
             // collections needed in the view
 
