@@ -49,7 +49,7 @@ namespace TechJobs.Controllers
                 };
                 jobData.Jobs.Add(newJob);
 
-                return Redirect(string.Format("/Job?={0}", newJob.ID));
+                return Redirect(string.Format("/Job?={0}", newJob.ID)); //can also use ($"/Job?={newJob.ID})
             }
             else
             {
